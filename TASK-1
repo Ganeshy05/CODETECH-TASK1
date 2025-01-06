@@ -1,0 +1,58 @@
+-- Create Books table
+CREATE TABLE Books (
+    BookID INT PRIMARY KEY,
+    Title VARCHAR(100),
+    Author VARCHAR(100),
+    Publisher VARCHAR(100),
+    YearPublished INT,
+    ISBN VARCHAR(13),
+    Quantity INT
+);
+
+-- Create Members table
+CREATE TABLE Members (
+    MemberID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Address VARCHAR(255),
+    Phone VARCHAR(15),
+    Email VARCHAR(100),
+    MembershipDate DATE
+);
+
+-- Create Transactions table
+CREATE TABLE Transactions (
+    TransactionID INT PRIMARY KEY,
+    BookID INT,
+    MemberID INT,
+    BorrowDate DATE,
+    ReturnDate DATE,
+    FOREIGN KEY (BookID) REFERENCES Books(BookID),
+    FOREIGN KEY (MemberID) REFERENCES Members(MemberID)
+);
+
+-- Insert data into Books table
+INSERT INTO Books (BookID, Title, Author, Publisher, YearPublished, ISBN, Quantity)
+VALUES (1, '1984', 'George Orwell', 'Secker & Warburg', 1949, '9780451524935', 5);
+
+-- Insert data into Members table
+INSERT INTO Members (MemberID, FirstName, LastName, Address, Phone, Email, MembershipDate)
+VALUES (1, 'John', 'Doe', '123 Main St, Anytown', '555-1234', 'john.doe@example.com', '2025-01-01');
+
+-- Insert data into Transactions table
+INSERT INTO Transactions (TransactionID, BookID, MemberID, BorrowDate, ReturnDate)
+VALUES (1, 1, 1, '2025-01-05', NULL);
+
+-- Update data in Books table
+UPDATE Books
+SET Quantity = 4
+WHERE BookID = 1;
+
+-- Delete data from Members table
+DELETE FROM Members
+WHERE MemberID = 1;
+
+-- Retrieve data from tables
+SELECT * FROM Books;
+SELECT * FROM Members;
+SELECT * FROM Transactions;
