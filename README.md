@@ -33,4 +33,5 @@ Update Data: Update records in the Books table, such as changing the quantity of
 Delete Data: Delete records from the Members table.
 
 Retrieve Data: Retrieve data from the Books, Members, and Transactions tables.
-C:\Users\ganesh\Downloads\Gemini_Generated_Image_tv6z8ttv6z8ttv6z.jpg 
+![Gemini_Generated_Image_tv6z8ttv6z8ttv6z](https://github.com/user-attachments/assets/611d3dce-c01b-4180-8413-31c4bc179e08)
+
